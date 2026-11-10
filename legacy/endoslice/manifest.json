@@ -1,0 +1,240 @@
+{
+  "vendors": [
+    "vendor/hammer.js",
+    "vendor/jszip.min.js",
+    "vendor/dicomParser.min.js",
+    "vendor/cornerstone.min.js",
+    "vendor/cornerstoneMath.min.js",
+    "vendor/wado/cornerstoneWADOImageLoader.min.js",
+    "vendor/cornerstoneTools.min.js",
+    "vendor/three.min.js",
+    "vendor/OrbitControls.js",
+    "vendor/TransformControls.js"
+  ],
+  "scripts": [
+    {
+      "file": "legacy/endoslice/scripts/001.mjs",
+      "module": true
+    },
+    {
+      "file": "legacy/endoslice/scripts/002.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/003.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/004.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/005.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/006.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/007.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/008.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/009.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/010.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/011.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/012.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/013.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/014.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/015.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/016-auto-disable-length-safe-patch.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/017-mpr-locator-glass-script.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/018.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/019.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/020.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/021-mpr-head-locator-final-script.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/022-patch-mpr-locator-svgs-limpos.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/023-recon3d-portfolio.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/024.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/025-patch-2025-06-fixes.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/026.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/027.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/028.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/029.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/030.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/031.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/032.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/033.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/034.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/035.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/036.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/037.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/038.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/039.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/040.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/041.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/042.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/043.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/044.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/045.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/046.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/047.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/048.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/049.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/050-endotri-top-counter-v1.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/051-endofocus-mini-hud-touch-v1.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/052-endotri-endofocus-fixes-v8.js",
+      "module": false
+    },
+    {
+      "file": "legacy/endoslice/scripts/053-endotri-mini-hud-touch-v1.js",
+      "module": false
+    }
+  ],
+  "externalsRemoved": [
+    "https://unpkg.com/hammerjs@2.0.8/hammer.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/jszip/3.10.1/jszip.min.js",
+    "https://unpkg.com/dicom-parser@1.8.13/dist/dicomParser.min.js",
+    "https://unpkg.com/cornerstone-core@2.6.1/dist/cornerstone.min.js",
+    "https://unpkg.com/cornerstone-math@0.1.9/dist/cornerstoneMath.min.js",
+    "https://unpkg.com/cornerstone-wado-image-loader@3.3.1/dist/cornerstoneWADOImageLoader.min.js",
+    "https://unpkg.com/cornerstone-tools@4.22.1/dist/cornerstoneTools.min.js",
+    "https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js",
+    "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js",
+    "https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/TransformControls.js"
+  ]
+}

@@ -1,0 +1,124 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Axius 3D Viewer</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0d1117" />
+    <link rel="manifest" href="./manifest.webmanifest" />
+    <link rel="icon" type="image/png" href="./icon-192.png" />
+    <link rel="apple-touch-icon" href="./icon-192.png" />
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <meta
+  http-equiv="Content-Security-Policy"
+  content="default-src 'self'; script-src 'self' 'unsafe-inline' 'wasm-unsafe-eval'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; worker-src 'self' blob:; connect-src 'self' data: blob:"
+/>
+  
+    <!-- Axius 3D Viewer: a abertura (4 s), antes de o programa carregar -->
+    <style>
+      #axv-splash {
+        position: fixed; inset: 0; z-index: 2147483000;
+        display: grid; grid-template-rows: 1fr auto;
+        background: radial-gradient(120% 90% at 30% 45%, #1a1714 0%, #0d0d0e 55%, #08090a 100%);
+        color: #e8e3dc;
+        font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+        transition: opacity .55s ease, visibility .55s ease;
+      }
+      #axv-splash.is-done { opacity: 0; visibility: hidden; }
+      #axv-splash .axv-s-stage {
+        display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); align-items: center;
+        gap: 4vw; padding: 6vh 7vw 0; min-height: 0;
+      }
+      #axv-splash .axv-s-cranio {
+        justify-self: end; width: min(46vh, 40vw); height: auto;
+        opacity: 0; transform: scale(1.05) translateX(18px);
+        animation: axvCranio 1.6s cubic-bezier(.2,.7,.2,1) .15s forwards;
+      }
+      #axv-splash .axv-s-copy { justify-self: start; max-width: 520px; }
+      #axv-splash .axv-s-axius {
+        display: block; margin: 0; font-size: clamp(44px, 7.4vw, 96px); font-weight: 300;
+        letter-spacing: .32em; line-height: 1; color: #f2efe9;
+        opacity: 0; animation: axvRise .9s ease .45s forwards;
+      }
+      #axv-splash .axv-s-name {
+        display: block; margin: 14px 0 0 .3em; font-size: clamp(15px, 1.9vw, 24px); font-weight: 600;
+        letter-spacing: .5em; color: #b9b2a8;
+        opacity: 0; animation: axvRise .9s ease .75s forwards;
+      }
+      #axv-splash .axv-s-name b { color: #ff8a18; font-weight: 700; }
+      #axv-splash .axv-s-sub {
+        margin: 26px 0 0 .3em; font-size: 14px; color: #8f887e; letter-spacing: .02em;
+        opacity: 0; animation: axvRise .9s ease 1.05s forwards;
+      }
+      #axv-splash .axv-s-bar {
+        position: relative; margin: 34px 0 0 .3em; width: min(320px, 70%); height: 2px;
+        background: rgba(232, 227, 220, .12); border-radius: 2px; overflow: hidden;
+      }
+      #axv-splash .axv-s-bar i {
+        position: absolute; inset: 0; transform-origin: left center; transform: scaleX(0);
+        background: linear-gradient(90deg, #c4621a, #ff8a18);
+        animation: axvBar 4s cubic-bezier(.45,.05,.3,1) forwards;
+      }
+      #axv-splash .axv-s-status { margin: 12px 0 0 .3em; min-height: 16px; font-size: 12px; color: #7d766d; }
+      #axv-splash footer { padding: 0 7vw 24px; text-align: center; }
+      #axv-splash .axv-s-by { margin: 0 0 6px; font-size: 13px; font-weight: 600; color: #d6d0c7; letter-spacing: .02em; }
+      #axv-splash .axv-s-legal { margin: 0 auto; max-width: 880px; font-size: 11px; line-height: 1.5; color: #7f786f; }
+      @keyframes axvCranio { to { opacity: 1; transform: none; } }
+      @keyframes axvRise { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+      @keyframes axvBar { to { transform: scaleX(1); } }
+      @media (max-width: 760px) {
+        #axv-splash .axv-s-stage { grid-template-columns: 1fr; justify-items: center; text-align: center; padding-top: 4vh; gap: 2vh; }
+        #axv-splash .axv-s-cranio { justify-self: center; width: min(38vh, 70vw); }
+        #axv-splash .axv-s-copy { justify-self: center; }
+        #axv-splash .axv-s-bar { margin-left: auto; margin-right: auto; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        #axv-splash .axv-s-cranio, #axv-splash .axv-s-axius, #axv-splash .axv-s-name, #axv-splash .axv-s-sub { animation: none; opacity: 1; transform: none; }
+      }
+    </style>
+    <script type="module" crossorigin src="./assets/Dk0Dl3Ur.js"></script>
+    <link rel="stylesheet" crossorigin href="./assets/C0sJj8mj.css">
+  </head>
+
+  <body>
+    
+    <div id="axv-splash" role="status" aria-label="Abrindo o Axius 3D Viewer">
+      <div class="axv-s-stage">
+        <img class="axv-s-cranio" src="./splash-cranio.webp" alt="" />
+        <div class="axv-s-copy">
+          <span class="axv-s-axius">AXIUS</span>
+          <span class="axv-s-name"><b>3D</b> VIEWER</span>
+          <p class="axv-s-sub">Tomografia odontológica para estudo</p>
+          <div class="axv-s-bar"><i></i></div>
+          <p class="axv-s-status" id="axv-splash-status">Preparando o visualizador</p>
+        </div>
+      </div>
+      <footer>
+        <p class="axv-s-by">Desenvolvido pelo Prof. Dr. Paulo de Tarso S. de Macedo</p>
+        <p class="axv-s-legal">© 2026 Axius 3D Viewer. Todos os direitos reservados. Uso exclusivo para ensino: as imagens e as medidas não substituem a avaliação de um profissional habilitado nem o laudo radiológico. O exame é aberto só neste computador e não é enviado para a internet. Proibida a cópia, a modificação ou a distribuição sem autorização do autor.</p>
+      </footer>
+    </div>
+    <script>
+      (function () {
+        var steps = [[1300, 'Carregando os módulos'], [2700, 'Quase pronto'], [3700, 'Pronto']];
+        var status = document.getElementById('axv-splash-status');
+        steps.forEach(function (s) { setTimeout(function () { if (status) status.textContent = s[1]; }, s[0]); });
+        // sai depois de 4 s e com o programa já carregado (no máximo 25 s)
+        var t0 = Date.now(), loaded = document.readyState === 'complete', gone = false;
+        function finish() {
+          if (gone) return;
+          gone = true;
+          var el = document.getElementById('axv-splash');
+          if (!el) return;
+          el.classList.add('is-done');
+          setTimeout(function () { if (el.parentNode) el.parentNode.removeChild(el); }, 700);
+        }
+        function check() { if (loaded && Date.now() - t0 >= 4000) finish(); }
+        window.addEventListener('load', function () { loaded = true; setTimeout(check, Math.max(0, 4000 - (Date.now() - t0))); });
+        setTimeout(check, 4000);
+        setTimeout(finish, 25000);
+      })();
+    </script>
+    <div id="root"></div>
+  </body>
+</html>
