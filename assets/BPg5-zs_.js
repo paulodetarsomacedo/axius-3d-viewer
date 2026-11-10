@@ -1,0 +1,1 @@
+import{cI as p}from"./DK4RfM6F.js";async function d(i,r,s,a=!1,n=!1){const e=[];for(const o of s){const t=i.getViewport(o);if(!t)throw new Error(`Viewport with Id ${o} does not exist`);if(!p(t)){console.warn(`Viewport with Id ${o} does not implement addVolumes. Cannot add volume to this viewport.`);return}e.push(t)}await Promise.all(e.map(o=>o.addVolumes(r,a,n)))}export{d as a};
